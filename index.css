@@ -111,14 +111,14 @@ nav a:hover{
 
 .about-content h2 {
     font-size: 36px;
-    color: #1a1a1a;
+    color: white;
     margin: 0;
 }
 
 .about-content p {
     font-size: 16px;
     line-height: 1.6;
-    color: #666;
+    color: beige;
     margin: 0;
 }
 
@@ -174,7 +174,7 @@ nav a:hover{
 
 .stat-label {
     font-size: 16px;
-    color: b;
+    color: beige;
     margin: 8px 0 0 0;
 }
 
@@ -268,7 +268,7 @@ nav a:hover{
     padding: 0 20px;
 }
 
-
+/*footer */
 .footer-about {
     padding: 80px 0;
     font-family: 'Arial', sans-serif;
