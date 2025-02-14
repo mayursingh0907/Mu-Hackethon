@@ -9,9 +9,9 @@ body{
 nav{
     background-color: #000000;
     height: 150px;
-    margin-right: 53px;
-    margin-top: 53px;
-    margin-left: 53px;
+    margin-right: 55px;
+    margin-top: 20px;
+    margin-left: 55px;
     display: flex; 
     align-items: center;
     justify-content: space-between;
