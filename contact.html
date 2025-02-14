@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Modal Background */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            width: 50%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        /* Form Styling */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Error message styling */
+        .error-message {
+            color: #dc2626;
+            font-size: 14px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        /* Success message styling */
+        .success-message {
+            display: none;
+            text-align: center;
+            color: #059669;
+            font-size: 18px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            
+            <form id="contactForm" class="contact-form" onsubmit="handleSubmit(event)">
+                <h2 class="form-title">Contact Us</h2>
+                
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <span class="error-message">Please enter your name</span>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message">Please enter a valid email</span>
+                </div>
+    
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                    <span class="error-message">Please enter a subject</span>
+                </div>
+    
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <span class="error-message">Please enter your message</span>
+                </div>
+    
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+    
+            <div class="success-message">
+                Thank you for your message! We'll get back to you soon.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(event) {
+            event.preventDefault();
+            document.getElementById('contactModal').style.display = 'block';
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeModal() {
+            document.getElementById('contactModal').style.display = 'none';
+            document.body.style.overflow = 'auto'; 
+            document.getElementById('contactForm').reset();
+            document.querySelector('.success-message').style.display = 'none';
+            document.querySelector('.contact-form').style.display = 'flex';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('contactModal')) {
+                closeModal();
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            document.querySelector('.contact-form').style.display = 'none';
+            document.querySelector('.success-message').style.display = 'block';
+            
+            setTimeout(() => {
+                closeModal();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
