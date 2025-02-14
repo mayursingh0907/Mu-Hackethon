@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    margin: 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 450px;
+    padding: 2em;
+    background-color: #171717;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: .4s ease-in-out;
+}
+
+.form:hover {
+    transform: scale(1.05);
+    border: 1px solid black;
+}
+
+#heading {
+    margin-bottom: 1em;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.8em;
+    border-radius: 8px;
+    background-color: #252525;
+}
+
+.input-icon {
+    height: 1.5em;
+    width: 1.5em;
+    fill: white;
+}
+
+.input-field {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 1em;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.button1, .button2, .button3 {
+    padding: 0.7em;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    transition: .3s ease-in-out;
+}
+
+.button1, .button2 {
+    background-color: #252525;
+    color: white;
+    width: 48%;
+}
+
+.button1:hover, .button2:hover {
+    background-color: black;
+}
+
+.button3 {
+    margin-top: 1em;
+    background-color: #252525;
+    color: white;
+    width: 100%;
+}
+
+.button3:hover {
+    background-color: red;
+}
