@@ -15,15 +15,12 @@ nav{
     display: flex; 
     align-items: center;
     justify-content: space-between;
-    position: relative;
-    z-index: 2;
 }
 nav a{
     color: white;
     text-decoration: none;
     margin-right: 60px;
     font-size: 25px;
-    transition: color 0.3s ease;
 }
 nav a:hover{
     color: bisque;
@@ -33,9 +30,6 @@ nav a:hover{
     margin-left: 120px;
     font-size:45px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-#about-section {
-    scroll-margin-top: 100px; 
 }
 .man{
     color:white;
@@ -117,14 +111,14 @@ nav a:hover{
 
 .about-content h2 {
     font-size: 36px;
-    color: white;
+    color: #1a1a1a;
     margin: 0;
 }
 
 .about-content p {
     font-size: 16px;
     line-height: 1.6;
-    color: beige;
+    color: #666;
     margin: 0;
 }
 
@@ -180,7 +174,7 @@ nav a:hover{
 
 .stat-label {
     font-size: 16px;
-    color: beige;
+    color: b;
     margin: 8px 0 0 0;
 }
 
@@ -296,9 +290,6 @@ nav a:hover{
     transition: transform 0.3s;
     margin-bottom: 20px;  
 }
-
-/* Add these styles to your CSS file */
-
 .modal {
     display: none;
     position: fixed;
@@ -306,17 +297,18 @@ nav a:hover{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     backdrop-filter: blur(5px);
 }
 
+/* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #fff;
+    background-color: white;
     margin: 5% auto;
-    padding: 40px;
-    width: 90%;
+    padding: 30px;
+    width: 50%;
     max-width: 500px;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -334,14 +326,14 @@ nav a:hover{
     }
 }
 
+/* Close Button */
 .close-btn {
     position: absolute;
     right: 20px;
     top: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #666;
+    font-size: 24px;
     cursor: pointer;
+    color: #666;
     transition: color 0.3s;
 }
 
@@ -349,6 +341,7 @@ nav a:hover{
     color: #000;
 }
 
+/* Form Styling */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -356,8 +349,8 @@ nav a:hover{
 }
 
 .form-title {
+    font-size: 24px;
     color: #333;
-    font-size: 28px;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -369,8 +362,8 @@ nav a:hover{
 }
 
 .form-group label {
-    color: #555;
     font-size: 16px;
+    color: #555;
 }
 
 .form-group input,
@@ -388,27 +381,35 @@ nav a:hover{
     border-color: #2563eb;
 }
 
-.form-group textarea {
-    min-height: 120px;
+textarea {
     resize: vertical;
+    min-height: 120px;
 }
 
 .submit-btn {
     background-color: #2563eb;
     color: white;
-    padding: 14px 28px;
+    padding: 12px 24px;
     border: none;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 10px;
 }
 
 .submit-btn:hover {
     background-color: #1d4ed8;
 }
 
+/* Error message styling */
+.error-message {
+    color: #dc2626;
+    font-size: 14px;
+    margin-top: 4px;
+    display: none;
+}
+
+/* Success message styling */
 .success-message {
     display: none;
     text-align: center;
