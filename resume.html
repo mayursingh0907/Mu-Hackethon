@@ -9,23 +9,24 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>AI Resume Screening System</h1>
-            <p>Upload job description and resumes to find the best matches</p>
+            <h1 style="font-size: 60px;">AI Resume Screening System</h1><br>
+            <p>Upload job description and resumes</p><p> to find the best matches</p>
         </div>
 
         <div class="upload-section">
-            <div class="upload-box" id="jobDescription">
-                <h3>Job Description</h3>
-                <p>Drop your job description file here or</p>
-                <button onclick="document.getElementById('jobFile').click()">Browse Files</button>
-                <input type="file" id="jobFile" hidden accept=".pdf,.doc,.docx">
-            </div>
-
+            
             <div class="upload-box" id="resumes">
                 <h3>Resumes</h3>
                 <p>Drop multiple resume files here or</p>
                 <button onclick="document.getElementById('resumeFiles').click()">Browse Files</button>
                 <input type="file" id="resumeFiles" hidden multiple accept=".pdf,.doc,.docx">
+            </div>
+
+            <div class="upload-box" id="jobDescription">
+                <h3>Job Description</h3>
+                <p>Drop your job description file here or</p>
+                <button onclick="document.getElementById('jobFile').click()">Browse Files</button>
+                <input type="file" id="jobFile" hidden accept=".pdf,.doc,.docx">
             </div>
         </div>
 
