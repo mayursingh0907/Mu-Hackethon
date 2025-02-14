@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Screening System</title>
+    <link rel="stylesheet" href="resume.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI Resume Screening System</h1>
+            <p>Upload job description and resumes to find the best matches</p>
+        </div>
+
+        <div class="upload-section">
+            <div class="upload-box" id="jobDescription">
+                <h3>Job Description</h3>
+                <p>Drop your job description file here or</p>
+                <button onclick="document.getElementById('jobFile').click()">Browse Files</button>
+                <input type="file" id="jobFile" hidden accept=".pdf,.doc,.docx">
+            </div>
+
+            <div class="upload-box" id="resumes">
+                <h3>Resumes</h3>
+                <p>Drop multiple resume files here or</p>
+                <button onclick="document.getElementById('resumeFiles').click()">Browse Files</button>
+                <input type="file" id="resumeFiles" hidden multiple accept=".pdf,.doc,.docx">
+            </div>
+        </div>
+
+        <div class="progress-bar" id="progressBar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="results-section" id="results">
+            <h2>Matched Candidates</h2>
+            <ul class="candidate-list" id="candidateList">
+                <!-- Results will be populated here -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="resume.js"></script>
+</body>
+</html>
